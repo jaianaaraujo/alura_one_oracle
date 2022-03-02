@@ -1,0 +1,66 @@
+
+/*  RGB
+
+hexadecimal = _ _ _ _ _ _ (red _ _, green _ _, blue _ _ ) RGB = (red, green, blue)
+
+0 = ausencia de cor 
+f = máximo de cor
+
+*/
+
+
+#banner{
+width: 100%;
+}
+
+.principal{
+    background-color:#cccc;
+    padding: 30px;
+}
+
+.titulo-principal{
+    padding-left: 20px ;
+}
+
+h1{
+    text-align: center;
+}
+
+p{
+    text-align: center;  
+}
+
+#missao{
+   font-size: 20px;
+}
+
+em strong{ /* aqui estou dizendo que são os strongs dentro de todos os em */
+    color: #ff0000;
+}
+
+.itens{
+ font-style: italic;
+}
+
+.beneficios{
+    background-color: #ffffff;
+  
+}
+
+.centralizado{
+    text-align: center;
+}
+
+
+
+ul{
+    display: inline-block;
+    vertical-align: top; /* alinhando pela linha de cima */
+    width: 20%;
+    margin-right: 5%;
+}
+.imagemBeneficios{
+    width: 50%;
+    padding: 20px;;
+
+}

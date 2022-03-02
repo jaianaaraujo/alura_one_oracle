@@ -1,0 +1,57 @@
+<meta charset="UTF-8">
+
+<!-- 1.0 QUADRO BRANCO -->
+<canvas width="600"  height="400"></canvas>
+
+
+<!-- 2.0 CÓDIGO JAVASCRIPT -->
+<script>
+
+// 3.0 ACESSANDO O QUADRO
+var tela = document.querySelector('canvas');
+
+// 3.1  ACESSANDO O PINCE DO QUADRO
+var pincel = tela.getContext('2d');
+
+// 3.2 PREENCHENDO COM A COR QUE EU ESCOLHER
+pincel.fillStyle = 'grey'; 
+
+// 3.3 PREENCHENDO COM RETAS 
+pincel.fillRect(0, 0, 600, 400);
+
+
+//4.0 FUNÇÃO
+
+function desenhaCirculo(evento) {
+
+// 4.1 PEGANDO AS MEDIDAS DE ONDE EU CLICAR 
+
+var x = evento.pageX - tela.offsetLeft;  // PAGEX = para que eu possa pegar o eixo x da pagina utilizo o pageX
+
+// IMPORTANTE!!!!!!!! O HTMLElement.offsetLeft (offsetleft) é um método apenas de leitura que retorna a medida, em pixels, da distância do canto superior esquerdo do elemento atual para o nó HTMLElement.offsetParent.  Assim estou pegando as medidas extadas que estão dentro do quadrado e não fora 
+
+
+var y = evento.pageY - tela.offsetTop; // Para que eu possa pegar o eixo y da página utilizo o pageY
+
+
+/* Começamos a mexer com EVENTOS. Essa propriedade é chamada de ONCLICK
+eu quero que quando eu clicar na minha tela cinza (tela), apareça o alerta que criei na função (exibeAlerta)
+Para isso, eu tenho que chamar a variavel tela + o evento que eu quero e atribuir a função que eu quero que apareça.
+
+A função fica sem parentese, pq estou passando a funcionalidade da função para o tela.onclick*/
+
+// 6.0 BOLINHA ONDE EU CLICAR
+
+pincel.fillStyle="blue";
+pincel.beginPath();
+pincel.arc(x, y, 10, 0, 2*3.14);
+pincel.fill();
+
+console.log("posição do clique : " + x + ", " + y);
+}
+
+// 5.0 AO CLICAR
+
+tela.onclick = desenhaCirculo;  // por debaixo dos panos que vai executar a função exibelerta será o onclick 
+
+</script>

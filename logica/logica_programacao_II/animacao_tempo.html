@@ -1,0 +1,88 @@
+<meta charset="UTF-8">
+
+<!-- ACESSANDO O QUADRO -->
+
+<canvas width="600" height="400"></canvas>
+
+<!-- CÓDIGO JVASCRIPT -->
+
+<script>
+
+var tela = document.querySelector('canvas'); // Acessando ao quadro
+var pincel = tela.getContext('2d'); // Acessando ao pincel do quadro 
+
+pincel.fillStyle = 'lightgray';  // preenchendo com a cor que quero
+pincel.fillRect(0, 0, 600, 400); // preechendo com a reta e coloco as medidas que quero
+
+
+/* Vamos começas fazer animações na tela*/
+
+// DESENHA CIRCULO 
+
+
+function desenhaCirculo(x, y, raio)  {
+
+pincel.fillStyle = 'blue';
+pincel.beginPath();
+pincel.arc(x, y, raio, 0, 2 * Math.PI); // eixo X, eixo Y, raio, angulo, 2 * 3.14 (2 vezes o numero de PI, posso substirui também por 2 * Math.PI())
+pincel.fill();
+
+}
+
+
+// FUNÇÃO LIMPA TELA
+
+function limpaTela() {
+    
+   pincel.clearRect(0, 0, 600, 400); // Ela limpara o quadro que criamos toda vez que for chamada 
+}
+
+// FUNÇÃO PARA ATUZALIZAR A TELA 
+
+var x = 20;
+function atualizaTela() {
+
+   limpaTela();
+
+desenhaCirculo(x, 20, 10);
+x = x + 1; // assim, toda vez que acabar o tempo e retornar ela vai incrementando e alterando  o valor de x;
+
+}
+
+
+// EXECUTAR O CÓDIGO CONFORME O TEMPO DETERMINADO
+
+setInterval(atualizaTela, 20);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

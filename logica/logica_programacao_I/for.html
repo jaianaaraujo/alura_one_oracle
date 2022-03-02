@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+
+
+<script>
+
+// FUNÇÃO PULAR LINHA
+    function pularLinha() {
+
+        document.writ("<br><br>");
+    }
+
+// FUNÇÃO APARECER NO DOCUMENTO HTML
+
+    function mostra(frase) {
+
+        document.write(frase);
+    }
+
+
+var multiplicador = 1; 
+var estudanteQuer = parseInt(prompt("Qual tabuada você quer de 1 a 10?"));
+
+// COM WHILE
+
+while (multiplicador <= 10 ) {
+
+    mostra( estudanteQuer * multiplicador +  "<br>");
+    multiplicador ++
+}
+
+
+// COM FOR 
+
+for ( var multiplicador = 1; multiplicador <= 10 ; multiplicador ++) {
+
+    mostra( estudanteQuer * multiplicador +  "<br>");
+
+}
+
+
+</script>

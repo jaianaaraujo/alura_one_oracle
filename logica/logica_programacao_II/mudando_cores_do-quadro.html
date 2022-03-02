@@ -1,0 +1,50 @@
+<meta charset="UTF-8">
+
+<!-- QUADRO -->
+<canvas width="600" height="400"></canvas>
+
+<script>
+    
+    var tela = document.querySelector('canvas'); // acessando o  quadro
+    var pincel = tela.getContext('2d'); // pegando pincel do quadro com o GETCONTEXT E FALANDO QUAL DIMENSÃO EU QUERO ('2d')
+
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+    pincel.stokeStyle = 'pink';
+    pincel.strokeRect(0, 0, 600, 400);
+
+
+    function  desenharCirculo(evento) { // coloco um paramero para que cada vez que eu clicar e ativar a função, eu ativar junto a pesonalização que farei no parâmetro
+        
+    // SABER A LOCALIZAÇÃO DE ONDE MOUSE ESTÁ
+
+    var x = evento.pageX; //quero pegar o eixo x do evento, ou seja, de onde o meu mouse está localizado
+    var y = evento.pageY; // quero pegar o eixo y de onde o meu mouse está localizado 
+
+    // DESENHAR O CIRCULO
+
+    pincel.fillStyle = 'pink';
+    pincel.beginPath(); 
+    pincel.arc(x, y, 10, 0, 2 * 3.14);
+    pincel.fill();
+
+    }
+
+
+tela.onclick = desenharCirculo;
+
+
+function mudaCor() {
+
+indiceCorAtual++;
+
+if(indiceCorAtual >= cores.length) {
+    indiceCorAtual = 0; // volta para a primeira cor, azul
+}
+
+return false; // para não exibir o menu padrão do canvas
+}
+
+tela.oncontextmenu = mudaCor;
+
+</script>

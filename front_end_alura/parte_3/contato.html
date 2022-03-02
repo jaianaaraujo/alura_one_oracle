@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 0.1 links css -->    
+    <link rel="stylesheet" href="./reset.css/reset.css">
+    <link rel="stylesheet" href="./css/contato.css">
+
+    <title>Contato - Barbearia Alura</title>
+</head>
+<body>
+    <!-- 1.0 CABEÇALHO -->
+    <header>
+        <div class="caixa">
+            <h1><img src="./img/logo.png" alt="logo-preto"></h1>
+    <!-- 1.1 NAVEGAÇÃO -->
+            <nav>
+                <ul class="navegacao">
+                    <li><a href="index.html">home</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+    </header>
+
+<!-- 2.0 CORPO -->
+<main>
+    <!-- 2.1 TAG DO FORMULÁRIO -->
+    <form action="">
+        <label for="nomeSobrenome">Nome e Sobrenome:</label> <!-- for = eu digo que aquilo é uma etiqueta para um input, e ai coloco dentro no for o mesmo nome que dei ao identificador do nomeSobrenome. Quando coloco  -->
+        <input type="text" id="nomeSobrenome" class="input-padrao" required placeholder="Maria Joana da Silva"> <!-- REQUIRED é obrigatório o preenchimento -->
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" class="input-padrao" required placeholder="seuemail@dominio.com">
+        
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" class="input-padrao" placeholder="(xx) xxxx-xxxx">
+
+        <!-- 2.2 CAMPO DE MENSAGEM /TEXTAREA -->
+        <label for="mensagem">Mensagem:</label> <!-- Pro FOR funcionar eu preciso ter um id no textarea -->
+        <textarea name="mensagem" id="mensagem" cols="68" rows="10" required></textarea>
+         
+         <!-- 2.3 CAMPO DE OPÇÕES / RADIO --> 
+
+         <fieldset> <!-- No formulário quando queremos fazer divisões utilizamos a tag FIELDSET -->
+            <legend class="teste" id="teste">Como prefere o nosso contato:</legend>
+            <label  for="radio-email"><input type="radio" id="radio-email" value="email" name="contato">Email  </label>
+            <!-- o VALUE é o valor do meu input e não um texto que está aparecendo -->
+            
+            <label for="radio-telefone"><input type="radio" name="contato" id="radio-telefone">Telefone</label>
+          
+
+            <label for="radio-whatsapp"><input type="radio" name="contato" id="radio-whatsapp" checked>WhatsApp</label> <!-- CHECKED para sugerir que o input já fique selecionado -->
+           
+
+            <!-- Para que possamos colocar como opção escolhida apenas 1. Precisamos colocar as opções dentro de um grupo. Faço isso através do name. -->
+         </fieldset>
+
+         <!-- 2.3.1 SELETOR -->
+
+         <fieldset>
+            <legend>Qual horário prefere ser atendido?</legend> <!-- Dentro do fieldset colocamos o título usando a taf LAGEND -->
+            <select name="" id=""> <!-- o tipo select tem várias opções -->
+                    <option value="">Manhã</option>
+                    <option value="">Tarde</option>
+                    <option value="">Noite</option>
+            </select>
+
+            </fieldset> 
+         </div>
+         
+
+        
+         <!-- 2.4 NOVIDADES POR E-MAIL -->
+
+         <label for="" class="checkbox"><input type="checkbox">Você gostaria de receber as nossas novidades por e-mail </label>
+         
+       
+         <!-- 3.0  BOTÃO ENVIAR -->
+         <input type="submit" value="Enviar Formulário" class="enviar"> <!-- Para que eu tenha certeza que esse campo sempre será enviar, colocaremos um VALUE.  -->
+    </form>
+
+    <!-- 4.0 TABELA -->
+    <table>
+
+        <thead> <!-- Cabeça da tabela -->
+           <tr>
+
+                <th>Dia</th>
+                <th>Horário</th>
+           </tr> 
+        </thead>
+        
+        <tbody> <!-- Corpo da tabela -->
+            <tr>
+                <td>Segunda</td>
+                <td>8h ~ 20h </td>
+            </tr>
+            <tr>
+                <td>Quarta</td>
+                <td>8h ~ 20h </td>
+            </tr>
+            <tr>
+                <td>Sexta</td>
+                <td>8h ~ 20h </td>
+                <tr>
+                    <td colspan="3">Agende!</td> 
+                </tr>
+            </tr>
+        </tbody>
+        
+    </table>
+</main>
+
+<!-- COSPLAN: As tabelas também nos oferecem a possibilidade de juntar células e montar um visual diferente. Por exemplo, quando uma linha, que deveria ter 5 células, passa a mostrar só "uma célula".
+
+Esse efeito é conseguido através da propriedade colspan=X, onde X é o número de células que você quer agrupar.  -->
+<!-- 3.0 RODAPÉ -->
+<footer>
+    <img src="./img/logo-branco.png" alt="">
+    <p class="copyrights"> &copy; Copyright Barbearia Alura -  2019</p>
+</footer>
+</body>
+</html>

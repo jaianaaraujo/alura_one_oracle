@@ -1,0 +1,51 @@
+<meta charset="UTF-8">
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+// VARIÁVEIS
+    var tela = document.querySelector('canvas'); // acessando o quadro com querySelector
+    var pincel = tela.getContext('2d'); // pegando o pincel do quadro com getcontext('2d')  e informando a dimensão do pincel
+
+    pincel.fillStyle = 'lightgray'; // preencho primeiro a cor com FILLSTYLE
+    pincel.fillRect(0, 0, 600, 400); // preencho a reta (medidas) com FILLRECT
+
+    var raio = 10; // começo o raio com 10
+
+
+    // FUNÇÃO DESENHA CIRCULO
+    function desenhaCirculo(x, y, raio, cor) { // Crio uma função generica para fazer os circulos, uso no parametro o eixo x, eixo y, raio, e cor. Para que assim, eu possa informar o que eu quero ao chamar a função
+
+        pincel.fillStyle = cor; // preencho com a cor primeiro FILLSTYLE
+        pincel.beginPath(); // usso o BEGINPATH para informar onde iniciar o caminho
+        pincel.arc(x, y, raio, 0, 2 * Math.PI); // coloco as medidas do arco com ARC 
+        pincel.fill(); // E preencho com tudo o que está acima informando com FILL()
+    }
+
+    // CHAMANDO A FUNÇÃO
+    desenhaCirculo(300,200, raio + 20, 'red');
+    desenhaCirculo(300,200, raio + 10, 'white');
+    desenhaCirculo(300,200, raio, 'red');
+
+
+    // FUNÇÃO DISPARA
+    // Essa função vai disparar um alerta se acertou quando o mouse clicar no raio da bolinha menor 
+    function dispara(evento) {
+
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+
+
+        if ((x > 300 - raio)  // para que o jogador não precise clicar explicitamente no centro da bolinha menor. Colocamos que nos eixos existentes, se ele clicar com +10 ou - 10 dos eixos ele ganha
+            && (x < 300 + raio)
+                && (y > 200 - raio) 
+                    && (y < 200 + raio)) {
+
+            alert('Acertou');
+        }
+    }
+
+    tela.onclick = dispara;
+
+</script>

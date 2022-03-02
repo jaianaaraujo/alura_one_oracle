@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+function desenhaQuadrado(x, y, color) { // para deixar o código generico coloco o parametro, assim que chamar a função escrevo a personalização que eu quero
+
+var tela = document.querySelector('canvas');
+var pincel = tela.getContext('2d'); // com o GETCONTEXT ele me dará o pincel que preciso extrair da tela, e ai eu escolho que quero 2d
+
+pincel.fillStyle = color; // Por logica antes de escolher qual formato eu quero, preciso escolher a cor 
+pincel.fillRect(x, y, 50, 50);// o formato que eu quero. (x, y, with, height)
+
+// BORDAS NOS QUADRADOS 
+
+pincel.strokeStyle = 'black';
+pincel.strokeRect(x, y, 50, 50);
+
+}
+
+
+
+desenhaQuadrado(0, 0, 'blue');
+desenhaQuadrado(0, 50, 'pink');
+desenhaQuadrado(0, 100, 'yellow');
+
+
+
+
+
+</script>

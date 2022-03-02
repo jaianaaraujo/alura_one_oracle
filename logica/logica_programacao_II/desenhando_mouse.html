@@ -1,0 +1,91 @@
+<meta charset="UTF-8">
+
+<!--  QUADRO -->
+<canvas width="600" height="400"></canvas>
+
+<!-- ESPAÇO -->
+
+<br>
+
+<!--  TITULO -->
+<h1>Escolh a cor em Inglês</h1>
+
+<!-- INPUT -->
+<input type="color"> <!-- no tipo colo COLOR para aparecer a paleta -->
+
+
+<!--  CÓDIGO JAVASCRIPT -->
+<script>
+   
+  //  ACESSANDO O INPUT
+   var input = document.querySelector('input');
+
+  
+   //  INPUT EM FOCO
+
+   input.focus();
+
+   // PEGANDO A INFORMAÇÃO DO INNPUT COM O BOTÃO
+
+
+
+   // Acessar o quadro
+
+   var tela = document.querySelector('canvas');
+   var pincel = tela.getContext('2d');
+
+   // construir o quadro cinza 
+
+   pincel.fillStyle = 'grey';
+   pincel.fillRect(0, 0, 600, 400); // eixo x, eixo y, largura, altura
+   
+   // variavel denha 
+
+   var desenha = true; 
+
+   // Criar função desenha circulo 
+
+   tela.onmousemove = function (evento){
+       
+    if(desenha) {
+            var x = evento.pageX - tela.offsetLeft; // OFFSETLEFT para pegar a medida correta da esquerda
+            var y = evento.pageY - tela.offsetTop;  // OFFSETTOP para pegar a medida correta de cima
+            pincel.fillStyle = input.value; // informo a cor que quero preencher primeiro 
+            pincel.beginPath(); // digo para o pincel onde inciiar o caminho através do BEGINPATH
+            pincel.arc(x, y, 10, 0, 2 * 3.14); // informo as medidas do ciculo através do ARC
+            pincel.fill(); // e por fim, eu digo para preencher com o pincel as informações que estão acima com o FILL()
+        }
+        console.log(x + ',' + y); // independete se eu usar esse console aqui o código ele funciona
+    }
+
+    
+   
+
+
+    // AGORA EU QUERO QUE ELE SÓ DESENHA SE O LADO ESQUERDO DO MOUSE ESTIVER PRESSIONADO
+
+    tela.onmousedown = function (){
+
+        desenha = true;
+    }
+
+
+    // AGORA EU QUERO QUE SE O LADO DO MOUSE ESQUERDO DEIXAR DE SER PRESSIONADO ELE PARE DE DESENHAR
+
+
+    tela.onmouseup = function() {
+        desenha = false; 
+    }
+
+ 
+</script>
+
+  
+
+
+    
+
+  
+
+
+</script>

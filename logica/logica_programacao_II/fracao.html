@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+
+<!-- fracao.html -->
+
+<meta charset="UTF-8">
+<canvas width="700" height="500"></canvas>
+
+<script>
+
+    function desenhaQuadrado(x, y, tamanho, cor) {
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d'); // para pegar o pincel do canvas 
+
+        pincel.fillStyle=cor; // FILLSTYLE para escolher a cor
+        pincel.fillRect(x,y, tamanho, tamanho); // FILLRECT para escolher o formato(eixo x, eixo y, largura, altura)
+        pincel.strokeStyle='black';
+        pincel.strokeRect(x,y, tamanho, tamanho);
+    }
+
+    function desenhaTexto(texto, x , y) {
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+
+        pincel.font='20px Georgia'; // A fonte que queremos 
+        pincel.fillStyle='black'; // A cor que queremos 
+        pincel.fillText(texto, x, y);   // o FILLTEXT ele recebe o texto e as coordenadas onde se deve escrever   
+    }
+
+
+    desenhaTexto("Qual é a fração?", 60, 30);
+
+    var y = 50;
+    desenhaQuadrado(50, y, 100, 'green');
+    desenhaQuadrado(150, y, 100, 'green');
+    desenhaQuadrado(250, y, 100, 'green');
+    desenhaQuadrado(350, y, 100, 'white');
+
+</script>

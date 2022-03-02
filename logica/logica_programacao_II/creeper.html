@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    /* Com a tag canvas definida, criamos um script para pegar a tela e o pincel. Como iremos desenhar em 2d, passamos esse valor para a função getContext da tela: */
+
+    var tela = document.querySelector('canvas'); //acessei a tag canvas
+    var pincel = tela.getContext('2d'); // escolho como 2d
+
+    /* Com o pincel em mãos podemos desenhar a cabeça verde do Creeper. As coordenadas inicias são 200 (x) e 50 (y) com uma largura de 350 pixels e altura de 300 pixels: */
+
+    // cabeça
+    pincel.fillStyle = 'darkgreen'; // escoler a cor
+    pincel.fillRect(200,50,350,300); // desenhar a forma retangulo ou quadrado conforme as medidas
+
+    // olhos
+    pincel.fillStyle = 'black';
+    pincel.fillRect(250, 110, 90, 90);
+    pincel.fillRect(410, 110, 90, 90);
+
+    // nariz
+    pincel.fillRect(340, 200, 70, 100);
+
+    // boca ou barba
+    pincel.fillRect(300, 240, 40, 110);
+    pincel.fillRect(410, 240, 40, 110);    
+</script>

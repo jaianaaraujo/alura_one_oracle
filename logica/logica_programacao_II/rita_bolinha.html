@@ -1,0 +1,54 @@
+<meta charset="UTF-8">
+
+
+<canvas width="600" height="400"></canvas> <!-- pegou o quadro branco do html e colocou as medidas -->
+
+
+<!-- CÓDIGO JAVASCRIPT -->
+<script>
+
+    var tela = document.querySelector('canvas'); /* acessei o quadro branco atraves do querySelector() */
+    var pincel = tela.getContext('2d'); // Peguei o pincel do quadro branco com o getContext('2d') e informei a medida do pincel que eu quero 
+    pincel.fillStyle = 'lightgray'; // preenchi com a cor que quero com fillStyle
+    pincel.fillRect(0, 0, 600, 400); // preenchi com as medidas da reta com fillRect(), eixo x, eixo y, largura, altura
+
+
+    /* DESENHANDO O CIRCULO */
+
+    function desenhaCirculo(x, y, raio) { // usou como parametro o eixo x, eixo y e raio 
+
+        pincel.fillStyle = 'blue'; // escolheu a cor da bolinha com fillStyle
+        pincel.beginPath(); // usou o BEGINPATH() para indicar o inicio do caminho
+        pincel.arc(x, y, raio, 0, 2 * Math.PI); // criou o arco com o ARC
+        pincel.fill(); // preencheu tudo dito acima com o FILL();
+    }
+
+
+    /* FUNÇÃO LIMPA TELA - para quando for atualizando a bolinha em eixo diferente var limpando os rastros */
+
+    function limpaTela() { 
+
+        pincel.clearRect(0, 0, 600, 400); // utilizei o clearRect para limpar o quadro e por isso coloquei as mesmas medidas do quadro 
+    }
+
+
+    
+    /* FUNÇÃO ATUALIZA TELA */
+
+     var x = 20; // a variável fica fora para que assim possa ir acumulando os valores
+
+    function atualizaTela() {
+
+       
+        limpaTela(); 
+        desenhaCirculo(x, 20, 10);
+        x++;
+
+    }
+
+    setInterval(atualizaTela, 10);
+
+
+    /* Aprendemos que a função setInterval recebe dois parâmetros. O primeiro é o nome da função que desejamos que o JavaScript chame em um intervalo de tempo. O segundo parâmetro é esse intervalo de tempo em milissegundos. */
+
+</script>

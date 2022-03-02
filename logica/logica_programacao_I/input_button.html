@@ -1,0 +1,37 @@
+<meta charset="UTF-8">
+
+<input/> <!-- É uma entrada de dados -->
+<button>Compare com o meu segredo</button>
+
+<script>
+    var segredo = Math.random() * 10;
+
+    var input = document.querySelector("input");
+    input.focus();
+
+    function verifica () {
+       
+        if (input.value == segredo) {
+
+        alert("Você ACERTOU!");
+    
+        } else {
+
+        alert("Você ERROU!!!!!!!!");
+      
+           } 
+
+           input.value = "";
+           input.focus();
+
+    }
+
+   
+    var button = document.querySelector("button"); // Para manusear o button, preciso acessa-lo e para isso utilizo o querySelector 
+    button.onclick = verifica; // coloco o nome da função "verefica" sem parentese para não chamar a função sempre que atualiza a página, e sim armazenar o código e sua funcinalidade dentro do "onclick"
+   
+
+</script>
+
+
+

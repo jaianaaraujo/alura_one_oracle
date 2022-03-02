@@ -1,0 +1,40 @@
+<meta charset="UTF-8">
+
+<script>
+
+function pulaLinha() {
+
+document.write("<br>");
+}
+
+function mostra(frase) {
+document.write(frase);
+pulaLinha();
+}
+
+
+var rodada = 1; // a rodada inicia com 1 
+
+var numeroPensado =  Math.round(Math.random() * 10) ; // Para número aleatórios. Coloquei o numero pensado aqui fora para permanecer o mesmo durante as 3 tentativas
+
+while ( rodada <= 3) { // A rodada tem que ser até 3
+
+    var chute = parseInt(prompt("Digite se chute")) // O chute que o meu clienter der 
+
+    if (chute == numeroPensado) { // O chute que meu cliente der tem que ser igual ao numero pensado
+        mostra("Acertou!!! o numero pensado foi: " + numeroPensado); 
+        break; // Para depois que ele acertar para de perguntar 
+    }
+
+    else { // Se errou, mostrará que errou 
+       mostra("Errou!!"); 
+    }
+
+    rodada++ // contabilizando as rodadas 
+
+
+}
+
+
+    
+</script>

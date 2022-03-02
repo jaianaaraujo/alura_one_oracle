@@ -1,0 +1,48 @@
+<meta charset="UTF-8">
+
+<canvas width="600" height="600" color="green"> </canvas> <!-- Essa tag CANVAS ela tem a mesma funcionalidade que uma tela em branco -->
+
+
+<script>
+
+var tela = document.querySelector('canvas'); // Para que eu possa acessar a tag CANVAS
+
+var pincel = tela.getContext('2d'); // Pincel dado pela tela, e aqui informo que quero um pincel 2d
+
+pincel.fillStyle = 'lightgrey' // Aqui eu consigo alterar a cor do retangulo, e apos escolher a cor do retangulo preencherei.
+
+// PINCEL PREENCHENDO UM RETANGULO
+pincel.fillRect(0, 0, 600, 400); // Inicialmente digo que ele começara o retanguro do eixo x 0 e o eixo y 0. 
+
+// A ordem é? x, u, width, heitght 
+
+
+// CRIAR RETANGULO VERMELHO
+
+pincel.fillStyle = 'green';
+pincel.fillRect(0, 0, 200, 400);
+
+pincel.fillStyle = 'red';
+pincel.fillRect(400, 0, 200, 400);
+
+
+
+// CRIAR O RETANGULO
+
+pincel.fillStyle = 'yellow';
+    pincel.beginPath();
+    pincel.moveTo(300, 200); // mover para o meio
+    pincel.lineTo(200, 400); // fazendo as linhas do triangulo
+    pincel.lineTo(400, 400); // fazendo as linhas do triangulo
+    pincel.fill(); // preenchendo o triangulo
+
+
+
+    // CRIAR A BOLA
+
+    pincel.fillStyle = 'blue';
+    pincel.beginPath(); // um novo caminho
+    pincel.arc(300, 200, 60, 0, 2 * 3.14); // eixo x, eixo, y, tamanho do raio, angulo inicial, angulo final irradiado
+    pincel.fill();
+
+</script>

@@ -1,0 +1,49 @@
+<meta charset="UTF-8">
+
+<input/> <!-- É uma entrada de dados -->
+<button>Compare com o meu segredo</button>
+
+<script>
+
+    // VARIÁVEL GUARDANDO MAIS DE UM VALOR 
+    var segredos = [5, 7, 10, 2, 1]; // são 3 indices
+  
+
+    var input = document.querySelector("input"); // Consigo acessar o input 
+    input.focus(); // Aqui para o input ficar sempre com foco
+
+    function verifica () { // cio essa fução para verificar se acertei ou errei 
+
+        var achou = false; 
+
+        for (var posicao = 0; posicao < segredos.length; posicao++ ){ // lembrando que length ele analisa cada indice do array e não o elemento, por isso ele deve ser posição < segredos.lenght
+            
+
+            if (input.value == segredos[posicao]  ) { // Para saber o conteudo de uma array, eu coloco o nome da variavel e entre cochetes coloco o numero do indice, nesse caso, eu coloquei posição, pq atribuir a variavel possição ao numero de cada indice 
+
+            alert("Você ACERTOU!");
+            achou = true;  // Se encontrei então é verdadeiro, chegará no beack e termina. 
+            break;
+            
+                                                    } 
+                                                                     }
+
+            if(achou == false) {   // se eu não encontrei, será false, então ele avisará que errou e termina
+
+         alert("Você ERROU!!!!!!!!");
+
+            }
+       
+
+
+           input.value = ""; // Aqui para que independente de eu acerta ou errar, apos o javascript analisar a função verifica, ele deixar o input em branco 
+           input.focus();
+
+    }
+
+   
+    var button = document.querySelector("button"); // Para manusear o button, preciso acessa-lo e para isso utilizo o querySelector 
+    button.onclick = verifica; // coloco o nome da função "verefica" sem parentese para não chamar a função sempre que atualiza a página, e sim armazenar o código e sua funcinalidade dentro do "onclick"
+   
+
+</script>

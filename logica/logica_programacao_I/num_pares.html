@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+
+// Números pares de 1 a 100
+
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var contador = 2; // Ele já começa a conta de 2
+
+    while(contador <= 100) { // ele verifica se o numero é menor ou igual a 100, já que ele pede o limite de 100
+       
+        mostra(contador); // apos ele verificar, se é menor que 100 ou não, ele mostrará o valor atual do contador na tela 
+        contador = contador + 2 // apos mostrar ele volta fazer analisa, e agora o atual valor armazenado na variável é o valor da ultima analise do contador mais 2
+    }
+
+    mostra("FIIM");
+</script>

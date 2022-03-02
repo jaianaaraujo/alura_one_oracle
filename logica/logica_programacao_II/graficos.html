@@ -1,0 +1,59 @@
+<meta charset+="UTF-8">
+
+<!-- QUADRO BRANCO  -->
+<canvas width="600" height="400"></canvas>
+
+<!-- CÓDIGO JAVASCRIPT -->
+<script>
+
+
+// DESENHANDO O RETANGULO 
+
+    function desenhaRetangulo(x, y, largura, altura, cor) { // coloco como parametros o eixo x, o eixo y, largura, altura e a cor que queremos do retangulo
+        var tela = document.querySelector('canvas'); //  acesso o canva que esta no HTML
+        var pincel = tela.getContext('2d'); // acesso o pincel do canvas, e para acessar eu uso a API chamada de GETCONTEXT 
+
+        pincel.fillStyle=cor; // informo qual cor eu quero preencher,  atraves do FILLSTYLE
+        pincel.fillRect(x,y, largura, altura); // informo qual formato quero preencher atraves do FILLRECT()
+        pincel.strokeStyle='black'; // informo a cor da borda 
+        pincel.strokeRect(x,y, largura, altura); // informo o formato da borda, e o tamanho tem que conincidir com o tamanho de onde vamos colocar a borda 
+    }
+
+
+
+    // FUNÇÃO DESENHA TEXTO 
+
+    function desenhaTexto(x , y, texto) { // vou colocar como parâmetro o eixo x, eixo y, texto que quero inserir
+        var tela = document.querySelector('canvas'); // acesso o canvas 
+        var pincel = tela.getContext('2d'); // pego o pincel do canvas 
+
+        pincel.font='15px Georgia'; // qual tamanho e fonte de texto que quero usar no pincel
+        pincel.fillStyle='black'; // a cor do textp que quero usar no pincel
+        pincel.fillText(texto, x, y);   // Vou preencher o texto agora, usando todas as informaçõe de preenchimento usada acima, e uso como parametro o tamanho, o eixo x, e eixo y   
+    }
+
+
+
+    // FUNCTION DESENHA BARRA
+    // LOOP PARA CRIAÇÃO DE FUNÇÃO
+
+    function desenhaBarra(x, y, serie, cores, texto) {
+
+        desenhaTexto(x, y - 10, texto); //  y - 10 par sempre que colocar o texto ficar no eixo y colocado - 10
+
+        var somaAltura = 0; // contador
+        for (var i = 0; i < serie.length; i++) {
+            var altura = serie[i];
+            desenhaRetangulo(x, y + somaAltura, 50, altura, cores[i]);
+            somaAltura = somaAltura + altura;
+        }
+    }
+
+    var cores = ['blue','green','yellow', 'red'];
+    var serie2015 = [50,25,20,5];
+    var serie2016 = [65,20,13,2];
+
+    desenhaBarra(50, 50, serie2015, cores, '2015');
+    desenhaBarra(150, 50, serie2016, cores, '2016');
+
+</script>

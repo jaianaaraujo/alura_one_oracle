@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+
+<h1>Receitas do Yan</h1>
+
+<script>
+    var ingredientes = []; // A array vazia para que assim possa ir acrescentando com push logo em seguida
+
+    var quantidade = parseInt(prompt("Quantos ingredientes você vai adicionar?"));
+ // Aqui perguntarei a ele, quantos ingredientes ele pretende inserir no array, e deixo fora da operação para poder ir armazenando as palavras
+
+ var contador = 1; // O Contador é uma forma de limitação. Ele já começa com a primeira rodada de pergunta
+
+ while( contador <= quantidade) { // enquanto o contador for menor ou igual a quantidade que ele quer, vai ocorrer o que esta dentro
+
+    var ingrediente = prompt("Informe o ingrediente " + contador); // Aqui ele vai perguntar a ele quais ingredientes por rodada
+        
+    var existe = false;// para me controlar se existe ou não aquele ingrediente já no array
+
+
+    for( var posicao = 0; posicao < ingredientes.length; posicao++) { // aqui vou acessar cada item do array
+
+if( ingredientes[posicao] == ingrediente) { // confiro se cada item do array é igual ao ingrediente que ele acrescentou agora
+
+    existe = true; // se tiver algum igual, a função para e pergunta novamente
+    break;
+}
+}
+
+if( existe == false) { // Se não tiver igual 
+
+ingredientes.push(ingrediente); // ela acresentará no array 
+contador++; // a cada rodada eçla vai incrementando 
+}
+    }
+
+    console.log(ingredientes);
+
+</script>

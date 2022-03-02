@@ -1,0 +1,66 @@
+<meta charset="UTF-8">
+
+<!-- esquadro.html -->
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle="black";
+    pincel.beginPath();
+    pincel.moveTo(50, 50);
+    pincel.lineTo(50, 400);
+    pincel.lineTo(400, 400);
+    pincel.fill();
+
+    pincel.fillStyle="white";
+    pincel.beginPath();
+    pincel.moveTo(100, 175);
+    pincel.lineTo(100, 350);
+    pincel.lineTo(275, 350);
+    pincel.fill();
+
+
+
+    // COM FUNÇÃO
+
+ 
+
+var tela = document.querySelector('canvas');
+var pincel = tela.getContext('2d');
+
+function desenhaEsquadro(xa, ya, xc, yc, cor) {// coloco como parametros as medidas que quero 
+
+
+
+    // TRIANGULO PRETO 
+
+
+    pincel.fillStyle = cor // antes de tudo preciso informar com qual cor eu quero preencher usando o FILLSTYLE
+    pincel.beginPath(); // O BEGINPATH pq como teremos deslocamento de medidas alem da tradional que fazemos do triangulo precisamos do BEGINPATH para indicar o caminho a se pecorrer 
+    pincel.moveTo(xa, ya); // usamos o MOVETO para indicar onde moveremos o pincel para começas a criar o desenho
+    pincel.lineTo(xa, yc); // O LINETO é onde a linha começa a ser traçada, lembrando que o ponto de marcação iniciaç se fazer com o MOVETO, e o traço da linha (inicio/eixo x  e fim/ eixo y)se dar pelo LINETO 
+    pincel.lineTo(xc, yc); 
+    pincel.fill(); // Para depois de escolher a cor que queremos, para onde moveremos, onde traçaremos as linhas, colocamos o FILL() para preencher conforme as instruções citadas acima dele no código
+
+
+
+    // TRIANGULO BRANCO 
+
+    pincel.fillStyle = 'white'; 
+    pincel.beginPath();
+    pincel.moveTo((6*xa + xc)/7, (9*ya + 5*yc)/14);
+    pincel.lineTo((6*xa + xc)/7, (ya + 6*yc)/7);
+    pincel.lineTo((5*xa + 9*xc)/14, (ya + 6*yc)/7);
+    pincel.fill();
+
+}
+
+desenhaEsquadro(50, 50, 400, 400, 'black');
+
+
+
+</script>

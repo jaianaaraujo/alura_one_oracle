@@ -1,0 +1,101 @@
+<meta charset="UFT-8">
+
+
+<!-- QUADRO  -->
+
+<canvas width="600" height="400"></canvas>
+
+<!-- CÓDIGO JAVASCRIPT -->
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var x = 20;
+    var y = 20;
+
+    // Código do teclado 
+    // Cada tecla do teclado corresponde a um código e isso já está tabelado, só pesquisa que encontrar na documentação. 
+    // determino na variavel que se for esquerda, direita, cima, baixo, terá a numeração que corresponde  a tabela, para que eu possa usar essas informações depois na função a baixo 
+    var esquerda =  37;
+    var cima = 38;
+    var direita = 39;
+    var baixo = 40;
+
+
+    // Taxa de incremento 
+
+    var taxa = 10; // Já deixo uma taxa de incremento determinada, para facilitar 
+
+
+    /* Função desenha circulo */
+
+    function desenhaCirculo(x, y, raio) {
+
+        pincel.fillStyle = 'blue';
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+
+    /*  função limpa tela*/
+
+    function limpaTela() {
+
+        pincel.clearRect(0, 0, 600, 400);
+    }
+
+    /* Função atualiza tela */
+
+    function atualizaTela() { // quando essa função for executada
+
+        limpaTela(); 
+        desenhaCirculo(x, y, 10);
+    }
+
+    /* Intervalo do tempo */
+    setInterval(atualizaTela, 20);
+
+
+    /* FUNÇÃO LE DO TECLADO */
+
+    // O eixo x e Y será alterado conforme eu manuseio no teclado, e nesse caso quero as teclas de seta.
+    // para que funcione eu já aviso ao meu pc, que o document.onekeydown = leDoTeclado, vai ler se alguma tecla foi apertada, e quando for apertada vai ativar a função leDoTeclado
+
+    function leDoTeclado(evento) {  // uso no parametro o evento, que no caso seria a alguma tecla que eu apertar
+        
+            if(evento.keyCode == cima) { // se essa tecla que eu apertar (evento) o código foi igual o codigo da variavel cima, o eixo y será y = y - 10. 
+
+    y = y - taxa;
+
+    } else if (evento.keyCode == baixo) {
+
+    y = y + taxa;
+
+    } else if (evento.keyCode == esquerda) {
+
+    x = x - taxa;
+
+    } else if (evento.keyCode == direita) {
+
+    x = x + taxa;
+    }
+       
+    }
+
+    document.onkeydown = leDoTeclado; // Toda vez que uma tecla dor pressionada a função leDoTeclado sera chamada
+
+    /* Isso porque na função leDoTeclado podemos acessar evento.keyCode. O evento.keyCode traz o código da tecla que foi pressionada. Vamos declarar quatro variáveis que guardam os códigos que correspondem às nossas setinhas:
+
+Obs: Cada tecla possui um KeyCode (código de tecla) respectivo e isso foi catalogado em uma tabela. Essa tabela deve ser usada pelos navegadores web para que usem os mesmos valores. */
+
+</script>
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+<meta charset="UTF-8">
+
+<canvas width="600" height="400"></canvas> <!-- QUADRO  -->
+
+
+<!-- CÓDIGO JAVASCRIPT  -->
+
+<script>
+
+    var tela = document.querySelector('canvas'); // acessando o quadro do mundo html atraves do querySelector()
+    var pincel = tela.getContext('2d'); // pegando o pincel do quadro branco e dizendo qual medida do pincel eu quero com gerContext('2d')
+    pincel.fillStyle = 'lightgray'; // preechendo com a cor do pincel que eu escolher atraves do fillStyle
+    pincel.fillRect(0, 0, 600, 400); // preenchendo com as medidas da reta (eixo x, eixo y, largura, altura)
+
+
+    /* FUNÇÃO DESENHA CIRCULO */
+
+    function desenhaCirculo(x, y, raio) { // usando como parametro o eixo x, eixo y e raio
+
+        pincel.fillStyle = 'blue'; // preenchendo com a cor que quero atraves do fillStyle
+        pincel.beginPath(); // informando onde sera inicializado atraves do beginPath()
+        pincel.arc(x, y, raio, 0, 2 * Math.PI); // criando as medidas do arco artraves do ARC
+        pincel.fill(); // preenchendo conforme as informações acima com o FILL()
+    }
+
+
+    /* FUNÇÃO LIMPA TELA */
+
+    function limpaTela() {
+
+        pincel.clearRect(0, 0, 600, 400); // limpa tela com clearRect e uso as mesmas medidas do quadro ja que é o quadro que quero limpar 
+    }
+
+    /* FUNÇÃO ATUALIZA TELA */
+
+   var x = 20;  // A variável fica fora para poder ir acumulando os valores 
+
+    function atualizaTela() {
+
+        limpaTela();
+        desenhaCirculo(x, 20, 10);
+        x++;
+
+    }
+
+    setInterval(atualizaTela, 10);
+
+</script>

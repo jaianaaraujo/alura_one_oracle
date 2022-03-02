@@ -1,0 +1,123 @@
+
+
+
+/* 2.0 estilizando  o site */
+header{
+    background-color: #bbbbbb;
+    padding: 20px 0;
+}
+
+nav {
+    position: absolute;
+    top: 110px;
+    right: 0;
+}
+
+.caixa{
+  width: 940px;
+  position: relative;
+  margin: 0 auto; 
+}
+
+nav li {
+    display: inline;
+    margin: 0 0 0 15px; /* top, direita, baixo, esquerda */
+}
+
+nav a {
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: bold; /* peso da letra */
+    font-size: 22px; /* tamanho da letra */
+    text-decoration: none;     
+}
+
+nav a:hover{
+   color: #c78c19;
+   text-decoration: underline;
+}
+
+/* MAIN */
+
+main{
+    width: 940px;
+    margin: 0 auto;  /* superior, lados */
+   }
+
+form{
+    margin: 40px 0; /* superior 401px, lados 0 */
+}
+
+form label, form legend {
+display: block;
+font-size: 20px;
+margin: 0 0 10px;
+}
+
+.input-padrao{
+    display: inline;
+    margin: 0 0 20px;
+    padding: 10px 25px ;/* para cima/baixo e lados */
+    width: 50%;
+}
+
+.checkbox {
+    margin: 20px 0;
+}
+
+
+/* RODAPÉ */
+footer{
+    text-align: center;
+    background-color: #000000;
+    padding: 40px 0;
+}
+
+
+.copyrights{
+    color: #ffffff;
+    font-size: 13px;
+    margin: 20px ;
+}
+
+.enviar {
+
+    width: 40%;
+    padding: 15px 0;  /* cima e baixo/ lados */
+    background-color: orange;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    display: block;
+    transition: 3s all; /* a transição de tudo ocorrerá em 3 segundos */
+    cursor: pointer;
+
+}
+
+.enviar:hover {
+    background-color: red;
+    transform: /* rotate(5deg)  */scale(1.2);
+    
+}
+
+/* TABELA */
+
+table {
+    margin: 20px 0 40px;
+
+}
+
+thead{
+    background: #555555;
+    color: #ffffff;
+    font-weight: bold ;
+}
+
+td, th{
+    border: 2px solid #000000;
+    padding: 8px 15px;
+    text-align: center;
+}
+

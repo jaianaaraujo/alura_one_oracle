@@ -1,0 +1,39 @@
+<meta charset="UTF-8">
+<script>
+
+function pulaLinha() {
+    // pulando duas linhas
+    document.write("<br><hr><br>");
+}
+
+function mostra(frase) { // Para mostrar na página Html é preciso dessa função, nela temos o document.write
+    document.write("<big>" + frase + "</big>");
+    pulaLinha();
+}
+
+
+// Calular o IMC
+
+var pesoFlavio = 73;
+var alturaFlavio = 1.71;
+
+var imcFlavio = pesoFlavio / (alturaFlavio * alturaFlavio);
+
+mostra("O IMC de Flavio é: " +  Math.round(imcFlavio))
+
+
+// Criar uma função 
+
+function imc (altura, peso){
+ 
+
+    return  peso / (altura * altura); // return finaliza a execução de uma função e especifica os valores que devem ser retonados para onde a função foi chamada.
+
+}
+
+mostra(imc(73, 1.73));
+
+
+
+
+</script> 

@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+
+<script>
+
+function pulaLinha() {
+
+    document.write("<br><br>")
+}
+
+function mostra(frase) {
+
+    document.write(frase);
+}
+
+
+var vitorias = parseInt(prompt("Entre com o número de vitórias: "));
+var empates = parseInt(prompt("Ente com o número de empates: "));
+
+
+var pontos = (vitorias * 3) + empates;
+
+mostra("Os pontos seu time são: " + pontos );
+
+
+// No prompt, o javascript sempre ler como texto. Mas quando você usa esses dados do prompt para fazer uma operação de multiplicação ou divisão ele transforma esses dados em numero. 
+</script>

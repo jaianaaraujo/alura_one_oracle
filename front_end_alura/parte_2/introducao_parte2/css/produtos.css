@@ -1,0 +1,105 @@
+
+
+
+/* 2.0 estilizando  o site */
+header{
+    background-color: #bbbbbb;
+    padding: 20px 0;
+}
+
+nav {
+    position: absolute;
+    top: 110px;
+    right: 0;
+}
+
+.caixa{
+  width: 940px;
+  position: relative;
+  margin: 0 auto; 
+}
+
+nav li {
+    display: inline;
+    margin: 0 0 0 15px; /* top, direita, baixo, esquerda */
+}
+
+nav a {
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: bold; /* peso da letra */
+    font-size: 22px; /* tamanho da letra */
+    text-decoration: none;     
+}
+
+nav a:hover{
+   color: #c78c19;
+   text-decoration: underline;
+}
+
+
+.produtos {
+
+    width: 940px;
+    margin: 0 auto; /* 0 para cima e para baixo, e automatico para os lados */
+    padding: 50px 0; /*  para cima e para baixo / para os lados */
+}
+
+.produtos li {
+
+    display: inline-block; /* Um dos problemas de utilizar inline-block é que ele alinha os elementos pela linha de baixo e por isso, vamos utilizar o VERTICAL-ALIGN para poder alinhar pela linha de cima  */
+    text-align: center;
+    width: 30%;
+    height: 414.4px;
+    vertical-align: top;
+    margin: 0 1.5%;
+    padding: 30px 20px;
+    box-sizing: border-box; /* As propriedades de largura (width) e de altura (height) incluem o tamanho padding size e a propriedade border, mas não incluem a propriedade margin. */
+    border: 2px solid #000000;
+    border-radius: 15px; /* definir a curvatura da borda */
+    
+}
+
+.produtos li:hover{
+ border-color: #c78c19;
+}
+
+.produtos li:active{
+    border-color: #088c19;
+   }
+
+.produtos h2{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.produtos li:hover h2{ /* quando o mouse estiver por cima do li, eu quero alterar o h2  */
+
+    font-size: 35px;
+
+}
+
+.produto-descricao{
+font-size: 18px;
+
+}
+
+.produto-preco{
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+
+}
+
+footer{
+    text-align: center;
+    background-color: #000000;
+    padding: 40px 0;
+}
+
+
+.copyrights{
+    color: #ffffff;
+    font-size: 13px;
+    margin: 20px ;
+}
