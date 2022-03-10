@@ -1,17 +1,20 @@
 //***********  FUNÇÃO CRIAR TAREFA ********
 const criarTarefa = (evento) => {
     
-    evento.preventDefault(); // ele vai previnir o comportamento padrão de enviar rápido a resposta. E assim poderemos capturar a informação
+     evento.preventDefault(); // ele vai previnir o comportamento padrão de enviar rápido a resposta. E assim poderemos capturar a informação 
 
     const input = document.querySelector('[data-form-input]'); // acessando o data-form-input
     const valor = input.value; // aqui estou salvando o valor inserido no input
     
-   const tarefa =  document.querySelector('[data-task]');// selecionando a Li
+    const lista = document.querySelector('[data-list]'); // acesso a . Ul é filho da div, e pai da li
 
+   const tarefa =  document.createElement('li'); // criando um elemento li. Li é filho de UL
+tarefa.classList.add('task');
    const conteudo = `<p class="content">${valor}</p> `; // criei uma váriavel armazenando essa frase, usamos o tampleteString porque assim poderemos interpolar
 
-   tarefa.innerHTML = conteudo; // agora vamos pegar o Li e colocar o conteúdo dentre dele 
-   
+   tarefa.innerHTML = conteudo; 
+
+   lista.appendChild(tarefa); // Agora coloco a li(filha) dentro da ul(pai)
    input.value = " " // depois de imprimir o valor, aqui estou zerando as informações
 }
 
